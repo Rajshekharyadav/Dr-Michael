@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Appointments | Dr. Michael Gladstein, MD</title>
+    <meta
+      name="description"
+      content="Schedule a dermatology appointment with Dr. Michael Gladstein, MD. Contact form, clinic hours, and consultation details."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="contact">
+    <div class="site-shell">
+      <div class="site-popup" id="site-popup" aria-hidden="true" role="dialog" aria-labelledby="popup-title">
+        <div class="site-popup-backdrop" data-popup-close></div>
+        <div class="site-popup-panel glass-panel">
+          <button class="site-popup-close" type="button" aria-label="Close popup" data-popup-close>&times;</button>
+          <p class="eyebrow">Appointment Notice</p>
+          <h2 id="popup-title">Appointments are booked by phone only</h2>
+          <p>
+            Please call the clinic directly to schedule your visit. The contact form below is for questions only and
+            does not confirm appointment times.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="tel:+17187288979">Call to Book</a>
+            <a class="button button-secondary" href="https://google.com/maps/place/Michael+Gladstein,+MD/data=!4m2!3m1!1s0x0:0xa035bc349d63019d?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noreferrer">Open Google Map</a>
+          </div>
+        </div>
+      </div>
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="index.html" aria-label="Dermatology clinic homepage">
+            <img class="brand-mark" src="logo.jpeg" alt="Dr. Michael Gladstein clinic logo" />
+            <span>
+              <strong>Dr. Michael Gladstein, MD</strong>
+              <small>Board-Certified Dermatologist</small>
+            </span>
+          </a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="site-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Doctor</a>
+            <a href="services.html">Services</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="nav-cta">Book Visit</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero page-hero-iphone">
+          <div class="container page-hero-grid iphone-layout">
+            <div class="page-hero-copy" data-reveal="up">
+              <p class="eyebrow">Contact & Appointment</p>
+              <div class="iphone-chip-row">
+                <span class="iphone-chip">Phone Booking</span>
+                <span class="iphone-chip">Concierge Feel</span>
+              </div>
+              <h1>Schedule Your Visit Today</h1>
+              <p>
+                Call the clinic to schedule an appointment. Use the contact form for general questions, symptom details,
+                or non-booking inquiries.
+              </p>
+            </div>
+            <div class="portrait-panel glass-panel iphone-device" data-reveal="left">
+              <div class="iphone-notch"></div>
+              <img
+                src="Images/gallery/WhatsApp Image 2026-03-05 at 1.51.06 AM.jpeg"
+                alt="Friendly clinic environment"
+              />
+              <div class="iphone-device-bar">
+                <strong>Call +1 (718) 728-8979</strong>
+                <span>Appointments confirmed by phone only</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container contact-layout">
+            <div class="contact-card glass-panel iphone-card" data-reveal="up">
+              <p class="eyebrow">Contact Form</p>
+              <h2>Questions and patient inquiries</h2>
+              <p class="callout-note">
+                Appointments are booked by phone only. For scheduling, please call <a href="tel:+17187288979">+1 (718) 728-8979</a>.
+              </p>
+              <form class="appointment-form" id="appointment-form">
+                <label>
+                  Name
+                  <input type="text" name="name" placeholder="Your full name" required />
+                </label>
+                <label>
+                  Phone
+                  <input type="tel" name="phone" placeholder="+1 (718) 728-8979" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="name@example.com" required />
+                </label>
+                <label>
+                  Message
+                  <textarea name="message" rows="5" placeholder="Tell us about your skin concern or any question for the clinic team." required></textarea>
+                </label>
+                <button class="button button-primary" type="submit">Send Inquiry</button>
+                <p class="form-note" id="form-note" aria-live="polite"></p>
+              </form>
+            </div>
+
+            <div class="contact-sidebar">
+              <article class="contact-card glass-panel iphone-card" data-reveal="up">
+                <p class="eyebrow">Clinic Hours</p>
+                <h2>Office availability</h2>
+                <div class="hours-list">
+                  <span><strong>Monday</strong><small>8:30 AM - 5:00 PM</small></span>
+                  <span><strong>Tuesday</strong><small>8:30 AM - 5:00 PM</small></span>
+                  <span><strong>Wednesday</strong><small>9:00 AM - 6:00 PM</small></span>
+                  <span><strong>Thursday</strong><small>8:30 AM - 5:00 PM</small></span>
+                  <span><strong>Friday</strong><small>8:30 AM - 3:00 PM</small></span>
+                  <span><strong>Saturday</strong><small>By appointment</small></span>
+                  <span><strong>Sunday</strong><small>Closed</small></span>
+                </div>
+              </article>
+
+              <article class="contact-card glass-panel map-card iphone-card" data-reveal="up">
+                <p class="eyebrow">Google Map</p>
+                <h2>Clinic location</h2>
+                <div class="map-placeholder">
+                  <iframe
+                    class="map-embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.928822863397!2d-73.9188144!3d40.763590199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f38d153e45d%3A0xa035bc349d63019d!2sMichael%20Gladstein%2C%20MD!5e0!3m2!1sen!2sin!4v1774122648359!5m2!1sen!2sin"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Michael Gladstein, MD clinic location map"
+                  ></iframe>
+                </div>
+                <a class="map-link" href="https://google.com/maps/place/Michael+Gladstein,+MD/data=!4m2!3m1!1s0x0:0xa035bc349d63019d?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noreferrer">
+                  Open Michael Gladstein, MD clinic location in Google Maps
+                </a>
+                <p class="map-caption">Use the clinic location link for directions, navigation, and arrival planning.</p>
+                <p class="map-caption">Directions open in Google Maps for the Michael Gladstein, MD clinic location.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section cta-section">
+          <div class="container">
+            <div class="cta-card glass-panel" data-reveal="up">
+              <div>
+                <p class="eyebrow">Patient-Centered Care</p>
+                <h2>Professional support from first contact to follow-up</h2>
+                <p>Call the office to book your appointment. The contact form is available for questions and follow-up needs.</p>
+              </div>
+              <a class="button button-secondary" href="tel:+17187288979">Call The Office</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <a class="brand brand-footer" href="index.html">
+              <img class="brand-mark" src="logo.jpeg" alt="Dr. Michael Gladstein clinic logo" />
+              <span>
+                <strong>Dr. Michael Gladstein, MD</strong>
+                <small>Board-Certified Dermatologist</small>
+              </span>
+            </a>
+            <p>Elegant, patient-centered dermatology care focused on trust, clarity, and long-term skin wellness.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <a href="about.html">About Doctor</a>
+            <a href="services.html">Services</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div>
+            <h3>Practice Highlights</h3>
+            <p>Board Certification: American Board of Dermatology</p>
+            <p>Languages: English, Cantonese, French, Spanish</p>
+            <p>Recognition: Castle Connolly Top Doctor (2005–2009)</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

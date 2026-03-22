@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Michael Gladstein, MD | Dermatology Clinic</title>
+    <meta
+      name="description"
+      content="Expert dermatology care from Dr. Michael Gladstein, MD, a board-certified dermatologist with 43+ years of experience in advanced skin care."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="site-shell">
+      <div class="site-popup" id="site-popup" aria-hidden="true" role="dialog" aria-labelledby="popup-title">
+        <div class="site-popup-backdrop" data-popup-close></div>
+        <div class="site-popup-panel glass-panel">
+          <button class="site-popup-close" type="button" aria-label="Close popup" data-popup-close>&times;</button>
+          <p class="eyebrow">Appointment Notice</p>
+          <h2 id="popup-title">Appointments are booked by phone only</h2>
+          <p>
+            To schedule a visit with Dr. Michael Gladstein, MD, please call the clinic directly. Online forms can be
+            used for general questions, but appointment booking is confirmed by phone only.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="tel:+17187288979">Call to Book</a>
+            <a class="button button-secondary" href="https://google.com/maps/place/Michael+Gladstein,+MD/data=!4m2!3m1!1s0x0:0xa035bc349d63019d?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noreferrer">View Google Map</a>
+          </div>
+        </div>
+      </div>
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="index.html" aria-label="Dermatology clinic homepage">
+            <img class="brand-mark" src="logo.jpeg" alt="Dr. Michael Gladstein clinic logo" />
+            <span>
+              <strong>Dr. Michael Gladstein, MD</strong>
+              <small>Board-Certified Dermatologist</small>
+            </span>
+          </a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="site-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Doctor</a>
+            <a href="services.html">Services</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="nav-cta">Book Visit</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero hero-home">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+            <div class="hero-copy glass-panel" data-reveal="up">
+              <p class="eyebrow">Advanced Medical Dermatology in New York</p>
+              <div class="hero-badge-row">
+                <span class="hero-badge">Board-Certified Dermatologist</span>
+              </div>
+              <h1>Expert Dermatology Care You Can Trust</h1>
+              <p class="hero-subtitle">43+ years of trusted dermatology care.</p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="tel:+17187288979">Call to Book</a>
+                <a class="button button-secondary" href="#highlights">Learn More</a>
+              </div>
+            </div>
+            <div class="hero-visual" data-reveal="left">
+              <div class="hero-media">
+                <img
+                  class="hero-doctor-image"
+                  src="MainImage.png"
+                  alt="Dr. Michael Gladstein, MD"
+                />
+              </div>
+              <div class="hero-floating-note glass-panel hero-card-dark">
+                <span class="hero-card-label">Trusted Expertise</span>
+                <div class="hero-card-top">
+                  <p class="hero-card-summary">Board-certified, multilingual, and known for clear patient-centered care.</p>
+                  <div class="hero-trust-pills">
+                    <span>Board Certified</span>
+                    <span>Multilingual Care</span>
+                  </div>
+                </div>
+                <div class="hero-metrics hero-metrics-compact">
+                  <article>
+                    <strong>43+</strong>
+                    <span>Years</span>
+                  </article>
+                  <article>
+                    <strong>4</strong>
+                    <span>Languages</span>
+                  </article>
+                  <article>
+                    <strong>Top Doctor</strong>
+                    <span>2005-2009</span>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section apple-gallery-section">
+          <div class="container">
+            <div class="section-heading" data-reveal="up">
+              <p class="eyebrow">Clinic Gallery</p>
+              <h2>Inside the practice, patient moments, and brand visuals</h2>
+              <p>A refined preview of the gallery, with the full media collection available in one tap.</p>
+            </div>
+            <div class="apple-gallery-grid" id="home-gallery-grid" data-reveal="up"></div>
+            <div class="apple-gallery-actions" data-reveal="up">
+              <button class="button button-primary apple-gallery-more" id="open-gallery-modal" type="button">
+                More
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-labelledby="gallery-modal-title">
+          <div class="gallery-modal-backdrop" data-gallery-close></div>
+          <div class="gallery-modal-panel">
+            <button class="gallery-modal-close" type="button" aria-label="Close gallery" data-gallery-close>&times;</button>
+            <div class="gallery-modal-header">
+              <p class="eyebrow">Full Gallery</p>
+              <h2 id="gallery-modal-title">All clinic photos and videos</h2>
+            </div>
+            <div class="gallery-modal-grid" id="gallery-modal-grid"></div>
+          </div>
+        </div>
+
+        <div class="media-viewer" id="media-viewer" aria-hidden="true" role="dialog" aria-labelledby="media-viewer-title">
+          <div class="media-viewer-backdrop" data-media-viewer-close></div>
+          <div class="media-viewer-panel">
+            <button class="media-viewer-close" type="button" aria-label="Close media viewer" data-media-viewer-close>&times;</button>
+            <div class="media-viewer-header">
+              <p class="eyebrow">Gallery Viewer</p>
+              <h2 id="media-viewer-title">Clinic Media</h2>
+            </div>
+            <div class="media-viewer-stage" id="media-viewer-stage"></div>
+          </div>
+        </div>
+
+        <section class="trust-bar">
+          <div class="container trust-bar-grid" data-reveal="up">
+            <div>
+              <span>American Board of Dermatology</span>
+              <small>Certified specialist care</small>
+            </div>
+            <div>
+              <span>Castle Connolly Top Doctor</span>
+              <small>Recognized 2005-2009</small>
+            </div>
+            <div>
+              <span>43+ Years Experience</span>
+              <small>Longstanding patient trust</small>
+            </div>
+            <div>
+              <span>4 Languages Spoken</span>
+              <small>English, Cantonese, French, Spanish</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="highlights">
+          <div class="container">
+            <div class="section-heading" data-reveal="up">
+              <p class="eyebrow">Why Patients Choose This Practice</p>
+              <h2>High-touch care with the standards of a leading private clinic</h2>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card glass-panel" data-reveal="up">
+                <span class="feature-icon">01</span>
+                <h3>Board-Certified Expertise</h3>
+                <p>Evidence-based dermatology care grounded in decades of clinical experience and detailed evaluation.</p>
+              </article>
+              <article class="feature-card glass-panel" data-reveal="up">
+                <span class="feature-icon">02</span>
+                <h3>Compassionate Explanations</h3>
+                <p>Every visit is built around clear communication so patients understand their condition and next steps.</p>
+              </article>
+              <article class="feature-card glass-panel" data-reveal="up">
+                <span class="feature-icon">03</span>
+                <h3>Modern Equipment</h3>
+                <p>Contemporary diagnostic tools and treatment planning support precise care for common and complex concerns.</p>
+              </article>
+              <article class="feature-card glass-panel" data-reveal="up">
+                <span class="feature-icon">04</span>
+                <h3>Patient-Focused Access</h3>
+                <p>Convenient booking, responsive follow-up, and a professional environment designed to reduce stress.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section split-section">
+          <div class="container split-layout">
+            <div class="section-copy" data-reveal="right">
+              <p class="eyebrow">Clinical Excellence</p>
+              <h2>Dermatology that balances precision, comfort, and long-term skin health</h2>
+              <p>
+                Dr. Michael Gladstein, MD delivers comprehensive care for acne, psoriasis, suspicious lesions, painful
+                cysts, and everyday skin concerns. Treatment plans are tailored to each patient’s symptoms, medical
+                history, and goals.
+              </p>
+              <div class="check-grid">
+                <span>Thorough full-skin evaluations</span>
+                <span>Screenings for early detection</span>
+                <span>Personalized follow-up plans</span>
+                <span>Simple, patient-friendly education</span>
+              </div>
+            </div>
+            <div class="media-stack" data-reveal="left">
+              <video
+                class="media-large"
+                src="Video_Script_for_Patient_Testimonial.mp4"
+                controls
+                muted
+                playsinline
+                preload="metadata"
+                aria-label="Patient testimonial video"
+              ></video>
+              <img
+                class="media-small"
+                src="tttttt.png"
+                alt="Dermatology clinic feature visual"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section experience-section">
+          <div class="container experience-grid">
+            <div class="experience-panel glass-panel" data-reveal="right">
+              <p class="eyebrow">Elevated Experience</p>
+              <h2>A premium dermatology experience designed to feel calm, private, and exceptionally professional</h2>
+              <p>
+                From the first phone call to your in-office visit, the practice is positioned to feel polished and
+                attentive. Patients are met with thoughtful communication, efficient workflow, and the confidence that
+                comes from seeing a seasoned specialist.
+              </p>
+              <div class="experience-points">
+                <span>Detailed consultations</span>
+                <span>Refined clinic setting</span>
+                <span>Clear treatment planning</span>
+                <span>Personal follow-up guidance</span>
+              </div>
+            </div>
+            <div class="gallery-mosaic" data-reveal="left">
+              <img
+                class="mosaic-tall"
+                src="Images/gallery/ChatGPT Image Mar 15, 2026, 06_20_44 PM.png"
+                alt="Modern skincare treatment close-up"
+              />
+              <img
+                src="Images/gallery/WhatsApp Image 2026-03-05 at 1.51.11 AM (2).jpeg"
+                alt="Happy patient in a private medical environment"
+              />
+              <img
+                src="Images/gallery/WhatsApp Image 2026-03-05 at 1.51.11 AM.jpeg"
+                alt="Dermatology clinic interior details"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-soft">
+          <div class="container">
+            <div class="section-heading" data-reveal="up">
+              <p class="eyebrow">Services Preview</p>
+              <h2>Focused solutions for the skin concerns patients ask about most</h2>
+            </div>
+            <div class="service-preview-grid">
+              <article class="service-card" data-reveal="up">
+                <img
+                  src="Images/gallery/ChatGPT Image Mar 15, 2026, 06_26_53 PM.png"
+                  alt="Skincare close-up for acne treatment"
+                />
+                <div>
+                  <h3>Acne Treatment</h3>
+                  <p>Targeted plans for breakouts, scarring risk, and inflammation across teenage and adult skin.</p>
+                </div>
+              </article>
+              <article class="service-card" data-reveal="up">
+                <img
+                  src="Images/gallery/ChatGPT Image Mar 15, 2026, 06_28_44 PM.png"
+                  alt="Dermatology screening consultation"
+                />
+                <div>
+                  <h3>Skin Cancer Screening</h3>
+                  <p>Careful skin checks and lesion assessment focused on early recognition and peace of mind.</p>
+                </div>
+              </article>
+              <article class="service-card" data-reveal="up">
+                <img
+                  src="Images/gallery/ChatGPT Image Mar 17, 2026, 10_43_55 PM.png"
+                  alt="Healthy skin care portrait"
+                />
+                <div>
+                  <h3>Psoriasis Care</h3>
+                  <p>Long-term management strategies to reduce flare intensity and improve skin comfort.</p>
+                </div>
+              </article>
+              <article class="service-card" data-reveal="up">
+                <img
+                  src="Images/gallery/ChatGPT Image Mar 7, 2026, 05_11_31 PM.png"
+                  alt="Professional medical treatment setting"
+                />
+                <div>
+                  <h3>Cysts &amp; Abscess Treatment</h3>
+                  <p>Prompt evaluation and treatment planning for painful or recurrent skin growths and infections.</p>
+                </div>
+              </article>
+            </div>
+            <div class="section-actions">
+              <a class="button button-primary" href="services.html">Explore All Services</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section metrics-showcase">
+          <div class="container metrics-grid" data-reveal="up">
+            <article class="metric-card glass-panel">
+              <strong>43+</strong>
+              <span>Years of dermatology experience</span>
+            </article>
+            <article class="metric-card glass-panel">
+              <strong>1:1</strong>
+              <span>Tailored patient explanations and care planning</span>
+            </article>
+            <article class="metric-card glass-panel">
+              <strong>4</strong>
+              <span>Languages to support more comfortable communication</span>
+            </article>
+            <article class="metric-card glass-panel">
+              <strong>Top Doctor</strong>
+              <span>Recognized clinical reputation and patient trust</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-soft">
+          <div class="container">
+            <div class="section-heading" data-reveal="up">
+              <p class="eyebrow">Dermatology Blog</p>
+              <h2>Helpful skin guidance patients can read before they call</h2>
+            </div>
+            <div class="blog-preview-grid">
+              <article class="blog-preview-card glass-panel iphone-card" data-reveal="up">
+                <span class="blog-meta">Skin Cancer Prevention</span>
+                <h3>Why Regular Skin Checks Matter Even When Nothing Looks Wrong</h3>
+                <p>Preventive skin exams can identify subtle changes early and give patients greater peace of mind.</p>
+                <a href="blog.html#skin-checks">Read Article</a>
+              </article>
+              <article class="blog-preview-card glass-panel iphone-card" data-reveal="up">
+                <span class="blog-meta">Acne Treatment</span>
+                <h3>Adult Acne: Why It Happens and When to Seek Professional Care</h3>
+                <p>Persistent breakouts, irritation, and scarring risk often improve with a more personalized plan.</p>
+                <a href="blog.html#adult-acne">Read Article</a>
+              </article>
+              <article class="blog-preview-card glass-panel iphone-card" data-reveal="up">
+                <span class="blog-meta">Sensitive Skin Care</span>
+                <h3>How to Build a Gentle Routine When Your Skin Reacts Easily</h3>
+                <p>A simpler routine and the right diagnosis can make sensitive skin far easier to manage.</p>
+                <a href="blog.html#sensitive-skin">Read Article</a>
+              </article>
+            </div>
+            <div class="section-actions">
+              <a class="button button-primary" href="blog.html">Visit The Blog</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container testimonials-layout">
+            <div class="section-copy" data-reveal="right">
+              <p class="eyebrow">Patient Voice</p>
+              <h2>Reviews written in the language patients care about most: clarity, trust, and results</h2>
+              <p>
+                The practice experience is designed to feel personal and efficient, from the first phone call through
+                follow-up care.
+              </p>
+            </div>
+            <div class="testimonial-grid">
+              <article class="testimonial-card glass-panel" data-reveal="up">
+                <div class="stars" aria-label="5 star review">★★★★★</div>
+                <p>
+                  “Dr. Gladstein explained my treatment options in plain language and made me feel comfortable from the
+                  first visit. The office was polished, calm, and efficient.”
+                </p>
+                <strong>Patient review</strong>
+              </article>
+              <article class="testimonial-card glass-panel" data-reveal="up">
+                <div class="stars" aria-label="5 star review">★★★★★</div>
+                <p>
+                  “I came in for a skin check and left feeling informed, reassured, and genuinely cared for. That level
+                  of professionalism is rare.”
+                </p>
+                <strong>Patient review</strong>
+              </article>
+              <article class="testimonial-card glass-panel" data-reveal="up">
+                <div class="stars" aria-label="5 star review">★★★★★</div>
+                <p>
+                  “The doctor was thorough, patient, and detail-oriented. I appreciated how tailored the recommendations
+                  felt to my specific skin concerns.”
+                </p>
+                <strong>Patient review</strong>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section faq-section section-soft">
+          <div class="container">
+            <div class="section-heading" data-reveal="up">
+              <p class="eyebrow">FAQ</p>
+              <h2>Common skin concerns, answered clearly</h2>
+            </div>
+            <div class="faq-list">
+              <details class="faq-item" data-reveal="up">
+                <summary>When should I schedule a skin cancer screening?</summary>
+                <p>
+                  A screening is recommended if you notice a changing lesion, have a personal or family history of skin
+                  cancer, or simply want a preventive full-skin examination.
+                </p>
+              </details>
+              <details class="faq-item" data-reveal="up">
+                <summary>Can adult acne be treated effectively?</summary>
+                <p>
+                  Yes. Adult acne often responds well to individualized treatment plans that address inflammation,
+                  hormones, skin sensitivity, and scarring risk.
+                </p>
+              </details>
+              <details class="faq-item" data-reveal="up">
+                <summary>What happens during a first dermatology visit?</summary>
+                <p>
+                  The first visit typically includes a review of your concerns, medical history, skin examination, and a
+                  discussion of recommended next steps and treatment options.
+                </p>
+              </details>
+              <details class="faq-item" data-reveal="up">
+                <summary>Do you offer ongoing management for chronic conditions?</summary>
+                <p>
+                  Yes. Chronic skin conditions such as psoriasis and recurrent cysts benefit from monitoring, adjustment
+                  of treatment, and long-term skin health planning.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="section cta-section">
+          <div class="container">
+            <div class="cta-card glass-panel" data-reveal="up">
+              <div>
+                <p class="eyebrow">Schedule With Confidence</p>
+                <h2>Professional dermatology care with a patient-first approach</h2>
+                <p>
+                  Call the clinic to reserve a consultation, discuss your skin concerns, and begin a treatment plan
+                  that fits your needs.
+                </p>
+              </div>
+              <a class="button button-primary" href="tel:+17187288979">Schedule By Phone</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <a class="brand brand-footer" href="index.html">
+              <img class="brand-mark" src="logo.jpeg" alt="Dr. Michael Gladstein clinic logo" />
+              <span>
+                <strong>Dr. Michael Gladstein, MD</strong>
+                <small>Board-Certified Dermatologist</small>
+              </span>
+            </a>
+            <p>Elegant, patient-centered dermatology care focused on trust, clarity, and long-term skin wellness.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <a href="about.html">About Doctor</a>
+            <a href="services.html">Services</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div>
+            <h3>Practice Highlights</h3>
+            <p>Board Certification: American Board of Dermatology</p>
+            <p>Languages: English, Cantonese, French, Spanish</p>
+            <p>Recognition: Castle Connolly Top Doctor (2005–2009)</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

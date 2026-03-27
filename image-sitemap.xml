@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://drmichael.online/</loc>
+    <image:image>
+      <image:loc>https://drmichael.online/Images/seo/dr-michael-gladstein-astoria-dermatologist.jpg</image:loc>
+      <image:title>Dr. Michael Gladstein, board-certified dermatologist in Astoria, Queens</image:title>
+      <image:caption>Professional portrait of Dr. Michael Gladstein, MD</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drmichael.online/gallery.html</loc>
+    <image:image>
+      <image:loc>https://drmichael.online/Images/seo/dr-michael-gladstein-astoria-dermatology-office-exterior.jpg</image:loc>
+      <image:title>Exterior of Dr. Michael Gladstein dermatology office in Astoria</image:title>
+      <image:caption>Street view of the dermatology office in Astoria, Queens</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drmichael.online/Images/seo/dr-michael-gladstein-astoria-clinic-sign.jpg</image:loc>
+      <image:title>Clinic sign for Dr. Michael Gladstein, MD in Astoria</image:title>
+      <image:caption>Office sign and entrance details for the Astoria clinic</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drmichael.online/Images/seo/dr-michael-gladstein-astoria-office-exam-room.jpg</image:loc>
+      <image:title>Exam room at Dr. Michael Gladstein's Astoria dermatology office</image:title>
+      <image:caption>Patient exam room inside the Astoria practice</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drmichael.online/Images/seo/dr-michael-gladstein-astoria-office-treatment-room.jpg</image:loc>
+      <image:title>Treatment room at Dr. Michael Gladstein's office in Astoria</image:title>
+      <image:caption>Additional dermatology treatment room in the Astoria office</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drmichael.online/contact.html</loc>
+    <image:image>
+      <image:loc>https://drmichael.online/Images/seo/dr-michael-gladstein-astoria-office-exam-room.jpg</image:loc>
+      <image:title>Exam room inside Dr. Michael Gladstein's Astoria office</image:title>
+      <image:caption>Interior office photo used on the contact page</image:caption>
+    </image:image>
+  </url>
+</urlset>

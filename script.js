@@ -17,32 +17,34 @@ const mediaViewer = document.getElementById("media-viewer");
 const mediaViewerStage = document.getElementById("media-viewer-stage");
 const mediaViewerTitle = document.getElementById("media-viewer-title");
 const mediaViewerCloseButtons = [...document.querySelectorAll("[data-media-viewer-close]")];
+const tiltCards = [...document.querySelectorAll("[data-tilt-card]")];
 
 const homeGalleryItems = [
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 05_30_00 PM.png", title: "Clinic Visual" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 06_04_50 PM.png", title: "Dermatology Creative" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 06_06_11 PM.png", title: "Practice Branding" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 06_11_05 PM.png", title: "Care Experience" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 06_15_26 PM.png", title: "Professional Skin Care" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 06_20_44 PM.png", title: "Clinical Portrait" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 06_26_53 PM.png", title: "Consultation Visual" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 15, 2026, 06_28_44 PM.png", title: "Office Creative" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 17, 2026, 10_43_55 PM.png", title: "Dermatology Concept" },
-  { type: "image", src: "Images/gallery/ChatGPT Image Mar 7, 2026, 05_11_31 PM.png", title: "Skin Health Creative" },
-  { type: "video", src: "Images/gallery/Happy Birthday, Dr. Michael Gladstein!\uD83C\uDF89 Today, we celebrate you and all the incredible work you.mp4", title: "Celebration Video" },
-  { type: "image", src: "Images/gallery/Untitled design.png", title: "Design Visual" },
-  { type: "video", src: "Images/gallery/Video_Generation_Based_on_Scene_Descriptions.mp4", title: "Brand Video" },
-  { type: "video", src: "Images/gallery/Video_Script_for_Patient_Testimonial.mp4", title: "Patient Story Video" },
-  { type: "image", src: "Images/gallery/WhatsApp Image 2026-03-05 at 1.51.06 AM.jpeg", title: "Clinic Photo" },
-  { type: "image", src: "Images/gallery/WhatsApp Image 2026-03-05 at 1.51.08 AM.jpeg", title: "Patient Moment" },
-  { type: "image", src: "Images/gallery/WhatsApp Image 2026-03-05 at 1.51.10 AM.jpeg", title: "Practice Snapshot" },
-  { type: "image", src: "Images/gallery/WhatsApp Image 2026-03-05 at 1.51.11 AM (1).jpeg", title: "Office Scene" },
-  { type: "image", src: "Images/gallery/WhatsApp Image 2026-03-05 at 1.51.11 AM (2).jpeg", title: "Patient Care" },
-  { type: "image", src: "Images/gallery/WhatsApp Image 2026-03-05 at 1.51.11 AM.jpeg", title: "Clinic Detail" },
-  { type: "image", src: "Images/gallery/jgfdfhfdht.png", title: "Dermatology Asset" },
-  { type: "image", src: "Images/gallery/tttttt.png", title: "Medical Creative" },
-  { type: "image", src: "Images/gallery/uuuuuugf.png", title: "Practice Showcase" },
-  { type: "image", src: "Images/gallery/uuuuuuuuu.png", title: "Brand Artwork" },
+  {
+    type: "image",
+    src: "Images/seo/dr-michael-gladstein-astoria-dermatology-office-exterior.jpg",
+    title: "Astoria dermatology office exterior",
+  },
+  {
+    type: "image",
+    src: "Images/seo/dr-michael-gladstein-astoria-clinic-sign.jpg",
+    title: "Clinic sign at Dr. Michael Gladstein's Astoria office",
+  },
+  {
+    type: "image",
+    src: "Images/seo/dr-michael-gladstein-astoria-office-exam-room.jpg",
+    title: "Exam room inside the Astoria dermatology office",
+  },
+  {
+    type: "image",
+    src: "Images/seo/dr-michael-gladstein-astoria-office-treatment-room.jpg",
+    title: "Treatment room at Dr. Michael Gladstein's office",
+  },
+  {
+    type: "image",
+    src: "Images/seo/dr-michael-gladstein-astoria-dermatologist.jpg",
+    title: "Dr. Michael Gladstein, board-certified dermatologist",
+  },
 ];
 
 if (navToggle && siteNav) {
@@ -68,6 +70,7 @@ navLinks.forEach((link) => {
     "reviews.html": "reviews",
     "blog.html": "blog",
     "contact.html": "contact",
+    "gallery.html": "gallery",
   };
 
   if (href && pageMap[href] === currentPage) {
@@ -94,6 +97,52 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+const tiltMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const finePointerQuery = window.matchMedia("(pointer: fine)");
+const canTilt = finePointerQuery.matches && !tiltMotionQuery.matches;
+
+if (canTilt) {
+  tiltCards.forEach((card) => {
+    let frameId = null;
+
+    const resetTilt = () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      card.classList.remove("is-tilting");
+      card.style.setProperty("--tilt-rotate-x", "0deg");
+      card.style.setProperty("--tilt-rotate-y", "0deg");
+      card.style.setProperty("--tilt-glow-x", "50%");
+      card.style.setProperty("--tilt-glow-y", "50%");
+    };
+
+    const updateTilt = (event) => {
+      const rect = card.getBoundingClientRect();
+      const pointerX = (event.clientX - rect.left) / rect.width;
+      const pointerY = (event.clientY - rect.top) / rect.height;
+      const rotateY = (pointerX - 0.5) * 14;
+      const rotateX = (0.5 - pointerY) * 14;
+
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        card.classList.add("is-tilting");
+        card.style.setProperty("--tilt-rotate-x", `${rotateX.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-rotate-y", `${rotateY.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-glow-x", `${(pointerX * 100).toFixed(1)}%`);
+        card.style.setProperty("--tilt-glow-y", `${(pointerY * 100).toFixed(1)}%`);
+      });
+    };
+
+    card.addEventListener("mousemove", updateTilt);
+    card.addEventListener("mouseleave", resetTilt);
+    card.addEventListener("blur", resetTilt);
+  });
 }
 
 const createGalleryCard = (item, index) => {
@@ -124,6 +173,7 @@ const createGalleryCard = (item, index) => {
     } else {
       media.alt = item.title;
       media.loading = "lazy";
+      media.decoding = "async";
     }
 
     const meta = document.createElement("div");
@@ -194,7 +244,7 @@ const attachGalleryInteraction = (card, item) => {
   });
 };
 
-if (homeGalleryGrid) {
+if (homeGalleryGrid && homeGalleryGrid.children.length === 0) {
   const previewItems = homeGalleryItems.filter((item) => item.type === "image").slice(0, 3);
 
   previewItems.forEach((item, index) => {

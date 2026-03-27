@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+Sitemap: https://drmichael.online/sitemap.xml
+Sitemap: https://drmichael.online/image-sitemap.xml

@@ -5,6 +5,7 @@ const currentPage = document.body.dataset.page;
 const revealItems = [...document.querySelectorAll("[data-reveal]")];
 const appointmentForm = document.getElementById("appointment-form");
 const formNote = document.getElementById("form-note");
+const appointmentSubmitButton = appointmentForm ? appointmentForm.querySelector('button[type="submit"]') : null;
 const sitePopup = document.getElementById("site-popup");
 const popupCloseButtons = [...document.querySelectorAll("[data-popup-close]")];
 const popupPrimaryAction = sitePopup ? sitePopup.querySelector(".button") : null;
@@ -18,6 +19,10 @@ const mediaViewerStage = document.getElementById("media-viewer-stage");
 const mediaViewerTitle = document.getElementById("media-viewer-title");
 const mediaViewerCloseButtons = [...document.querySelectorAll("[data-media-viewer-close]")];
 const tiltCards = [...document.querySelectorAll("[data-tilt-card]")];
+const contactFormEndpoint =
+  window.siteConfig?.contactFormEndpoint ||
+  (appointmentForm ? appointmentForm.dataset.sheetEndpoint || "" : "");
+const isLocalFilePage = window.location.protocol === "file:";
 
 const homeGalleryItems = [
   {
@@ -301,13 +306,70 @@ if (mediaViewer) {
 }
 
 if (appointmentForm && formNote) {
-  appointmentForm.addEventListener("submit", (event) => {
+  appointmentForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(appointmentForm);
     const name = String(formData.get("name") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
 
-    formNote.textContent = `Thank you${name ? `, ${name}` : ""}. Your message has been received. For appointments, please call +1 (718) 728-8979 directly.`;
-    appointmentForm.reset();
+    if (!contactFormEndpoint) {
+      formNote.textContent =
+        "Google Sheet connection is not added yet. Please add the Apps Script web app URL in site-config.js.";
+      return;
+    }
+
+    if (appointmentSubmitButton) {
+      appointmentSubmitButton.disabled = true;
+      appointmentSubmitButton.textContent = "Sending...";
+    }
+
+    try {
+      const payload = new URLSearchParams({
+        name,
+        phone,
+        email,
+        message,
+        sourcePage: window.location.href,
+        submittedAt: new Date().toISOString(),
+      });
+
+      const response = await fetch(contactFormEndpoint, {
+        method: "POST",
+        mode: "no-cors",
+        body: payload,
+      });
+
+      if (response.type !== "opaque") {
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+
+        let result = null;
+        try {
+          result = await response.json();
+        } catch (error) {
+          result = null;
+        }
+
+        if (result && result.ok === false) {
+          throw new Error(result.message || "The form could not be saved.");
+        }
+      }
+
+      formNote.textContent = `Thank you${name ? `, ${name}` : ""}. Your message has been sent and saved successfully. For appointments, please call +1 (718) 728-8979 directly.`;
+      appointmentForm.reset();
+    } catch (error) {
+      formNote.textContent = isLocalFilePage
+        ? "Local file testing can block form submissions in some browsers. Please test from the live website or a local server, or call +1 (718) 728-8979."
+        : "Sorry, your inquiry could not be saved right now. Please call +1 (718) 728-8979 or try again in a moment.";
+    } finally {
+      if (appointmentSubmitButton) {
+        appointmentSubmitButton.disabled = false;
+        appointmentSubmitButton.textContent = "Send Inquiry";
+      }
+    }
   });
 }
 

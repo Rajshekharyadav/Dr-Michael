@@ -974,6 +974,160 @@ textarea {
   margin-top: 2rem;
 }
 
+.blog-feature-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.82fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.blog-feature-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1fr);
+  gap: 1.2rem;
+  padding: 1.1rem;
+}
+
+.blog-feature-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.blog-feature-content {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.blog-feature-label,
+.post-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.48rem 0.82rem;
+  border-radius: 999px;
+  background: rgba(116, 180, 219, 0.12);
+  color: var(--blue-ink);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.blog-feature-content h3,
+.blog-spotlight-card h3,
+.post-card-body h3 {
+  margin: 0;
+  color: var(--blue-ink);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.18;
+}
+
+.blog-spotlight-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.blog-spotlight-card {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.3rem;
+}
+
+.blog-spotlight-card a {
+  display: inline-flex;
+  color: var(--blue-deep);
+  font-weight: 800;
+}
+
+.blog-topic-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.blog-topic-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(176, 199, 213, 0.5);
+  color: var(--blue-ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.post-note {
+  margin-top: 1rem;
+  padding: 0.95rem 1.05rem;
+  border-radius: 18px;
+  background: rgba(245, 250, 252, 0.92);
+  border: 1px dashed rgba(124, 168, 192, 0.5);
+  color: var(--blue-ink);
+}
+
+.post-stream {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.post-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+}
+
+.post-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.post-date {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.post-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.post-card-video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 22px;
+  background: #000;
+}
+
+.post-card-body {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.post-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
 .apple-gallery-section {
   background:
     linear-gradient(180deg, #f5f5f7 0%, #ececef 100%);
@@ -2091,6 +2245,7 @@ textarea {
   .review-summary-grid,
   .metrics-grid,
   .trust-bar-grid,
+  .post-stream,
   .blog-preview-grid,
   .apple-gallery-grid,
   .gallery-modal-grid {
@@ -2100,6 +2255,8 @@ textarea {
   .hero-content,
   .split-layout,
   .about-story-grid,
+  .blog-feature-shell,
+  .blog-feature-card,
   .testimonials-layout,
   .contact-layout,
   .page-hero-grid,
@@ -2201,6 +2358,7 @@ textarea {
   .trust-bar-grid,
   .experience-points,
   .gallery-mosaic,
+  .post-stream,
   .blog-preview-grid,
   .apple-gallery-grid,
   .gallery-modal-grid {
@@ -2223,6 +2381,8 @@ textarea {
 
   .split-layout,
   .about-story-grid,
+  .blog-feature-shell,
+  .blog-feature-card,
   .testimonials-layout,
   .contact-layout,
   .experience-grid,
@@ -2459,6 +2619,8 @@ textarea {
 
   .service-card img,
   .blog-card img,
+  .post-card img,
+  .post-card-video,
   .gallery-mosaic img,
   .media-large,
   .portrait-panel img,
@@ -2748,6 +2910,7 @@ textarea {
   .service-card,
   .blog-preview-card,
   .blog-card,
+  .post-card,
   .testimonial-card,
   .rating-card,
   .credential-card,
@@ -2758,6 +2921,8 @@ textarea {
 
   .service-card img,
   .blog-card img,
+  .post-card img,
+  .post-card-video,
   .gallery-mosaic img,
   .media-large,
   .portrait-panel img,

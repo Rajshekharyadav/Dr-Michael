@@ -1,5 +1,5 @@
 const SHEET_ID = "1yzvR38MDrkUdmXzjSAV6Jt64Cp71bSOYF5AHZsGNmXw";
-const TARGET_SHEET_NAME = "Form Inquiries";
+const TARGET_SHEET_NAME = "";
 
 function doPost(e) {
   try {
@@ -40,8 +40,13 @@ function doGet() {
 
 function getTargetSheet_() {
   const spreadsheet = SpreadsheetApp.openById(SHEET_ID);
-  const existingSheet = spreadsheet.getSheetByName(TARGET_SHEET_NAME);
-  return existingSheet || spreadsheet.insertSheet(TARGET_SHEET_NAME);
+
+  if (TARGET_SHEET_NAME) {
+    const existingSheet = spreadsheet.getSheetByName(TARGET_SHEET_NAME);
+    return existingSheet || spreadsheet.insertSheet(TARGET_SHEET_NAME);
+  }
+
+  return spreadsheet.getSheets()[0];
 }
 
 function ensureHeaderRow_(sheet) {

@@ -21,6 +21,6 @@ The script is already set to write to:
 
 `https://docs.google.com/spreadsheets/d/1yzvR38MDrkUdmXzjSAV6Jt64Cp71bSOYF5AHZsGNmXw/edit?usp=sharing`
 
-It will create or use a tab named:
+By default, the script now writes to the first sheet tab in that spreadsheet.
 
-`Form Inquiries`
+If you want a specific tab instead, set `TARGET_SHEET_NAME` in `Code.gs`.

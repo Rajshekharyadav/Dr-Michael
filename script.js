@@ -6,6 +6,7 @@ const revealItems = [...document.querySelectorAll("[data-reveal]")];
 const appointmentForm = document.getElementById("appointment-form");
 const formNote = document.getElementById("form-note");
 const appointmentSubmitButton = appointmentForm ? appointmentForm.querySelector('button[type="submit"]') : null;
+const hiddenSheetTarget = document.getElementById("hidden-sheet-target");
 const sitePopup = document.getElementById("site-popup");
 const popupCloseButtons = [...document.querySelectorAll("[data-popup-close]")];
 const popupPrimaryAction = sitePopup ? sitePopup.querySelector(".button") : null;
@@ -326,7 +327,7 @@ if (appointmentForm && formNote) {
     }
 
     try {
-      const payload = new URLSearchParams({
+      await submitInquiryToGoogleSheet({
         name,
         phone,
         email,
@@ -334,29 +335,6 @@ if (appointmentForm && formNote) {
         sourcePage: window.location.href,
         submittedAt: new Date().toISOString(),
       });
-
-      const response = await fetch(contactFormEndpoint, {
-        method: "POST",
-        mode: "no-cors",
-        body: payload,
-      });
-
-      if (response.type !== "opaque") {
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-
-        let result = null;
-        try {
-          result = await response.json();
-        } catch (error) {
-          result = null;
-        }
-
-        if (result && result.ok === false) {
-          throw new Error(result.message || "The form could not be saved.");
-        }
-      }
 
       formNote.textContent = `Thank you${name ? `, ${name}` : ""}. Your message has been sent and saved successfully. For appointments, please call +1 (718) 728-8979 directly.`;
       appointmentForm.reset();
@@ -370,6 +348,72 @@ if (appointmentForm && formNote) {
         appointmentSubmitButton.textContent = "Send Inquiry";
       }
     }
+  });
+}
+
+function submitInquiryToGoogleSheet(payload) {
+  return new Promise((resolve, reject) => {
+    if (!contactFormEndpoint) {
+      reject(new Error("Missing Google Sheet endpoint."));
+      return;
+    }
+
+    const tempForm = document.createElement("form");
+    tempForm.method = "POST";
+    tempForm.action = contactFormEndpoint;
+    tempForm.target = hiddenSheetTarget ? hiddenSheetTarget.name : "_blank";
+    tempForm.style.display = "none";
+
+    Object.entries(payload).forEach(([key, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      tempForm.appendChild(input);
+    });
+
+    document.body.appendChild(tempForm);
+
+    let settled = false;
+    let timeoutId = null;
+
+    const cleanup = () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+
+      if (hiddenSheetTarget) {
+        hiddenSheetTarget.removeEventListener("load", handleLoad);
+      }
+
+      tempForm.remove();
+    };
+
+    const handleLoad = () => {
+      if (settled) {
+        return;
+      }
+
+      settled = true;
+      cleanup();
+      resolve();
+    };
+
+    if (hiddenSheetTarget) {
+      hiddenSheetTarget.addEventListener("load", handleLoad, { once: true });
+    }
+
+    timeoutId = window.setTimeout(() => {
+      if (settled) {
+        return;
+      }
+
+      settled = true;
+      cleanup();
+      resolve();
+    }, 2500);
+
+    tempForm.submit();
   });
 }
 

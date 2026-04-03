@@ -219,113 +219,345 @@
           <div class="container">
             <div class="section-heading" data-reveal="up">
               <p class="eyebrow">Practice Posts</p>
-              <h2>A Google Maps style post section for clinic updates, reminders, and announcements</h2>
+              <h2>Google-style practice posts built from your latest clinic updates in Astoria</h2>
               <p>
-                Use these shorter cards the way Google Business Profile posts are used: quick updates, service
-                announcements, reminders, seasonal advice, and practice news.
+                This section now mirrors the tone of a live Google Business Profile feed, using your latest post copy
+                and the images stored in <code>Images/post</code> so patients can browse recent updates directly on the site.
               </p>
             </div>
             <p class="post-note" data-reveal="up">
-              Duplicate any `.post-card` block below when you want to add a new short clinic post. These cards are built
-              to behave like Google Business Profile updates, including image posts and video-style announcements.
+              Each card below uses your supplied Google Maps post text and local post creatives. You can keep adding new
+              practice posts here in the same format whenever a fresh GBP update goes live.
             </p>
+            <div class="post-toolbar" data-reveal="up">
+              <div class="post-filter-group" role="toolbar" aria-label="Filter practice posts">
+                <button class="post-filter is-active" type="button" data-post-filter="all" aria-pressed="true">All Posts</button>
+                <button class="post-filter" type="button" data-post-filter="results" aria-pressed="false">Results</button>
+                <button class="post-filter" type="button" data-post-filter="trust" aria-pressed="false">Patient Trust</button>
+                <button class="post-filter" type="button" data-post-filter="screening" aria-pressed="false">Skin Checks</button>
+                <button class="post-filter" type="button" data-post-filter="clinic" aria-pressed="false">Clinic News</button>
+              </div>
+              <a
+                class="button button-secondary post-map-link"
+                href="https://www.google.com/maps/place/Michael+Gladstein,+MD+%7C+Dermatologist+Astoria/@40.7635902,-73.9188144,17z/data=!4m4!3m3!1s0x0:0xa035bc349d63019d!11m1!2e1?entry=ttu&amp;g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noreferrer"
+              >Open Google Map Profile</a>
+            </div>
+            <p class="post-filter-status" id="post-filter-status" data-reveal="up">Showing all 9 practice posts</p>
             <div class="post-stream">
-              <article class="post-card glass-panel iphone-card" data-reveal="up">
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="results">
                 <div class="post-card-head">
-                  <span class="post-badge">Clinic Update</span>
-                  <span class="post-date">March 2026</span>
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">2 hours ago</span>
                 </div>
+                <span class="post-badge">Acne Scar Care</span>
+                <div class="post-media-grid post-media-grid-double">
+                  <img
+                    src="Images/post/Precision-Led_Skin_Recovery_version_2.png"
+                    alt="Acne scar recovery post creative for Dr. Michael Gladstein in Astoria"
+                    width="1400"
+                    height="1050"
+                  />
+                  <img
+                    src="Images/post/pomelli_image.png"
+                    alt="Before and after acne improvement image from Dr. Michael Gladstein's Astoria clinic"
+                    width="1400"
+                    height="1050"
+                  />
+                </div>
+                <div class="post-card-body">
+                  <h3>Can your skin recover after acne scars?</h3>
+                  <p>
+                    Acne scars can affect both your skin and confidence, but with the right dermatology treatment,
+                    visible improvement is possible. At Dr. Michael Gladstein's clinic, we focus on advanced,
+                    personalized treatments to improve skin texture and reduce acne scars effectively. If you're
+                    searching for the best dermatologist in Astoria, we provide expert care for acne, acne scars, and
+                    long-term skin health.
+                  </p>
+                  <p>
+                    <strong>Acne scar treatment.</strong> <strong>Skin texture improvement.</strong>
+                    <strong>Personalized dermatology care.</strong> Start your journey toward clearer, healthier skin
+                    today in Astoria, NY.
+                  </p>
+                </div>
+                <div class="post-card-actions">
+                  <a class="button button-primary" href="acne-treatment-astoria.html">Learn More</a>
+                  <a class="button button-secondary" href="contact.html">Book Appointment</a>
+                </div>
+              </article>
+
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="results">
+                <div class="post-card-head">
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">1 day ago</span>
+                </div>
+                <span class="post-badge">Patient Results</span>
                 <img
-                  src="Images/seo/dr-michael-gladstein-astoria-office-exam-room.jpg"
-                  alt="Exam room inside Dr. Michael Gladstein's Astoria dermatology office"
+                  src="Images/post/Real_Results,_No_Filters_version_1.png"
+                  alt="Real results no filters dermatology post from Dr. Michael Gladstein"
                   width="1400"
                   height="1050"
                 />
                 <div class="post-card-body">
-                  <h3>Now booking spring skin checks by phone</h3>
-                  <p>Patients who want a preventive skin evaluation this season should call early. Appointments are confirmed by phone only.</p>
+                  <h3>Real results, no filters.</h3>
+                  <p>
+                    At Dr. Michael Gladstein's clinic, we focus on accurate diagnosis and personalized dermatology
+                    treatments for long-term skin health. Whether you are dealing with acne, eczema, or persistent skin
+                    conditions, expert care can make a real difference.
+                  </p>
+                  <p>
+                    If you're looking for the best dermatologist in Astoria, we provide trusted, professional skin care
+                    backed by years of experience. Start your journey toward healthier skin today.
+                  </p>
                 </div>
                 <div class="post-card-actions">
-                  <a class="button button-primary" href="tel:+17187288979">Call To Book</a>
-                  <a class="button button-secondary" href="contact.html">Office Details</a>
+                  <a class="button button-primary" href="services.html">Learn More</a>
+                  <a class="button button-secondary" href="contact.html">Book Appointment</a>
                 </div>
               </article>
 
-              <article class="post-card glass-panel iphone-card" data-reveal="up">
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="trust">
                 <div class="post-card-head">
-                  <span class="post-badge">Service Highlight</span>
-                  <span class="post-date">March 2026</span>
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">2 days ago</span>
                 </div>
-                <video class="post-card-video" controls preload="metadata" playsinline>
-                  <source src="Images/gallery/Video_Script_for_Patient_Testimonial.mp4" type="video/mp4" />
-                </video>
-                <div class="post-card-body">
-                  <h3>Patient story style video for dermatology trust building</h3>
-                  <p>A short-form video post works well for practice visibility, patient confidence, and branded Google-style updates tied to the Astoria office.</p>
-                </div>
-                <div class="post-card-actions">
-                  <a class="button button-primary" href="contact.html">Book A Visit</a>
-                  <a class="button button-secondary" href="gallery.html">View More Media</a>
-                </div>
-              </article>
-
-              <article class="post-card glass-panel iphone-card" data-reveal="up">
-                <div class="post-card-head">
-                  <span class="post-badge">Seasonal Reminder</span>
-                  <span class="post-date">March 2026</span>
-                </div>
+                <span class="post-badge">Patient Trust</span>
                 <img
-                  src="Images/seo/dr-michael-gladstein-astoria-dermatology-office-exterior.jpg"
-                  alt="Exterior of Dr. Michael Gladstein dermatology office in Astoria, Queens"
+                  src="Images/post/Trusted_by_Your_Neighbors_version_2.png"
+                  alt="Trusted by patients across Astoria post creative"
                   width="1400"
                   height="1050"
                 />
                 <div class="post-card-body">
-                  <h3>Sun protection matters even before summer starts</h3>
-                  <p>Daily sunscreen, reapplication, and protective habits remain important in Astoria even when the weather feels mild.</p>
+                  <h3>Trusted by patients across Astoria.</h3>
+                  <p>
+                    We are proud to share real feedback from our patients who have experienced effective dermatology
+                    care at our clinic. Our focus is always on accurate diagnosis, personalized treatment, and making
+                    every patient feel comfortable and confident.
+                  </p>
+                  <p>
+                    If you're looking for the best dermatologist in Astoria, Dr. Michael Gladstein provides expert care
+                    for acne, eczema, skin conditions, and more. Join the many patients who trust us for their skin
+                    health.
+                  </p>
                 </div>
                 <div class="post-card-actions">
-                  <a class="button button-primary" href="#sun-protection">Read Tip</a>
-                  <a class="button button-secondary" href="gallery.html">View Office Photos</a>
+                  <a class="button button-primary" href="reviews.html">Read Reviews</a>
+                  <a class="button button-secondary" href="contact.html">Book Your Visit</a>
                 </div>
               </article>
 
-              <article class="post-card glass-panel iphone-card" data-reveal="up">
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="clinic">
                 <div class="post-card-head">
-                  <span class="post-badge">Video Update</span>
-                  <span class="post-date">March 2026</span>
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">3 days ago</span>
                 </div>
-                <video class="post-card-video" controls preload="metadata" playsinline>
-                  <source src="Images/gallery/Video_Generation_Based_on_Scene_Descriptions.mp4" type="video/mp4" />
-                </video>
+                <span class="post-badge">Personalized Care</span>
+                <img
+                  src="Images/post/Diagnostic_Confidence_version_4.png"
+                  alt="Personalized dermatology care creative for Astoria clinic"
+                  width="1400"
+                  height="1050"
+                />
                 <div class="post-card-body">
-                  <h3>Short clinic brand video for social and map-style posting</h3>
-                  <p>Video posts can be reused across the website, social content, and Google-style update feeds to keep the practice profile feeling active.</p>
+                  <h3>Every skin type deserves personalized treatment.</h3>
+                  <p>
+                    At Michael Gladstein, MD, we understand that every skin type is unique and so is its treatment.
+                    Located in Astoria, NY, our clinic provides personalized dermatology care for acne, pigmentation,
+                    hair loss, and a wide range of skin concerns using advanced techniques and proven medical expertise.
+                  </p>
+                  <p>
+                    Whether you're struggling with stubborn acne or simply want healthier, glowing skin, we are here to
+                    deliver safe, effective, and result-driven treatments tailored just for you.
+                  </p>
                 </div>
                 <div class="post-card-actions">
-                  <a class="button button-primary" href="blog.html#featured-guides">See More Guides</a>
+                  <a class="button button-primary" href="services.html">Explore Treatments</a>
+                  <a class="button button-secondary" href="contact.html">30-62 36th St, Astoria</a>
+                </div>
+              </article>
+
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="trust">
+                <div class="post-card-head">
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">5 days ago</span>
+                </div>
+                <span class="post-badge">Patient Story</span>
+                <img
+                  src="Images/post/Reclaiming_Skin_Confidence_version_1.png"
+                  alt="Real patient experience post creative from Dr. Michael Gladstein clinic"
+                  width="1400"
+                  height="1050"
+                />
+                <div class="post-card-body">
+                  <h3>Real patient experience at Dr. Michael Gladstein's clinic.</h3>
+                  <p>
+                    Our patient shares how personalized care and the right treatment helped improve their skin and
+                    confidence. We always focus on listening, accurate diagnosis, and effective dermatology treatment.
+                  </p>
+                  <p>
+                    If you're looking for the best dermatologist in Astoria, we are here to help with acne, eczema,
+                    rashes, and more.
+                  </p>
+                </div>
+                <div class="post-card-actions">
+                  <a class="button button-primary" href="contact.html">Book Appointment</a>
+                  <a class="button button-secondary" href="reviews.html">See Patient Feedback</a>
+                </div>
+              </article>
+
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="screening">
+                <div class="post-card-head">
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">5 days ago</span>
+                </div>
+                <span class="post-badge">Skin Cancer Screening</span>
+                <img
+                  src="Images/post/Spot_the_signs_early__version_3.png"
+                  alt="Early skin cancer screening awareness post by Dr. Michael Gladstein"
+                  width="1400"
+                  height="1050"
+                />
+                <div class="post-card-body">
+                  <h3>Early detection can make all the difference.</h3>
+                  <p>
+                    At Dr. Michael Gladstein's clinic, we provide professional skin cancer screening in Astoria with
+                    over 40 years of dermatology experience. Our goal is to identify any skin concerns early and
+                    provide the right treatment with precision and care.
+                  </p>
+                  <p>
+                    If you are looking for the best dermatologist in Astoria, we offer thorough skin evaluations,
+                    expert diagnosis, and personalized care in a comfortable clinical environment.
+                  </p>
+                </div>
+                <div class="post-card-actions">
+                  <a class="button button-primary" href="skin-cancer-screening-astoria.html">Book</a>
+                  <a class="button button-secondary" href="contact.html">Schedule Screening</a>
+                </div>
+              </article>
+
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="clinic">
+                <div class="post-card-head">
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">6 days ago</span>
+                </div>
+                <span class="post-badge">Website Launch</span>
+                <img
+                  src="Images/post/Untitled design.png"
+                  alt="New website launch announcement for drmichael.online"
+                  width="1400"
+                  height="1050"
+                />
+                <div class="post-card-body">
+                  <h3>Our new dermatology website is now live.</h3>
+                  <p>
+                    We are excited to announce the launch of our new website at drmichael.online. If you are looking
+                    for the best dermatologist in Astoria, our new website makes it easier than ever to learn about our
+                    services, explore treatments, and book your appointment online.
+                  </p>
+                  <p>
+                    Patients can now review dermatology treatments, explore before and after results, read patient
+                    feedback, and contact the office faster from any device.
+                  </p>
+                </div>
+                <div class="post-card-actions">
+                  <a class="button button-primary" href="index.html">Learn More</a>
+                  <a class="button button-secondary" href="services.html">Explore Services</a>
+                </div>
+              </article>
+
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="results">
+                <div class="post-card-head">
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">Mar 15, 2026</span>
+                </div>
+                <span class="post-badge">Treatment Results</span>
+                <div class="post-media-grid post-media-grid-double">
+                  <img
+                    src="Images/post/Evidence-Based_Transformation_version_1.png"
+                    alt="Visible skin improvement after professional dermatology treatment"
+                    width="1400"
+                    height="1050"
+                  />
+                  <img
+                    src="Images/post/pomelli_image (1).png"
+                    alt="Before and after treatment image from dermatology care in Astoria"
+                    width="1400"
+                    height="1050"
+                  />
+                </div>
+                <div class="post-card-body">
+                  <h3>Real results after professional dermatology treatment.</h3>
+                  <p>
+                    Our patient came with visible skin concerns, and after the recommended treatment plan, the skin
+                    shows clear improvement. Every skin type is different, which is why we focus on personalized care
+                    and proven dermatology treatments.
+                  </p>
+                  <p>
+                    Healthy skin starts with the right diagnosis and the right treatment. Book your consultation today
+                    in Astoria, NY.
+                  </p>
+                </div>
+                <div class="post-card-actions">
+                  <a class="button button-primary" href="contact.html">Book Consultation</a>
+                  <a class="button button-secondary" href="gallery.html">View More Results</a>
+                </div>
+              </article>
+
+              <article class="post-card glass-panel iphone-card" data-reveal="up" data-post-category="clinic">
+                <div class="post-card-head">
+                  <div class="post-profile">
+                    <strong>Michael Gladstein, MD | Dermatologist Astoria</strong>
+                    <span>Google-style practice post</span>
+                  </div>
+                  <span class="post-date">Mar 15, 2026</span>
+                </div>
+                <span class="post-badge">General Dermatology</span>
+                <img
+                  src="Images/post/Roots_of_Chronic_Irritation_version_1.png"
+                  alt="Trusted dermatologist in Astoria post covering acne eczema and rashes"
+                  width="1400"
+                  height="1050"
+                />
+                <div class="post-card-body">
+                  <h3>Looking for a trusted dermatologist in Astoria, NY?</h3>
+                  <p>
+                    Dr. Michael Gladstein provides expert diagnosis and treatment for a wide range of skin conditions
+                    including acne, eczema, rashes, skin infections, and more.
+                  </p>
+                  <p>
+                    With years of dermatology experience, Dr. Gladstein offers personalized care and effective
+                    treatments to help you achieve healthy, clear skin.
+                  </p>
+                </div>
+                <div class="post-card-actions">
+                  <a class="button button-primary" href="best-dermatologist-astoria.html">Learn More</a>
                   <a class="button button-secondary" href="tel:+17187288979">Call The Office</a>
-                </div>
-              </article>
-
-              <article class="post-card glass-panel iphone-card" data-reveal="up">
-                <div class="post-card-head">
-                  <span class="post-badge">Patient Info</span>
-                  <span class="post-date">March 2026</span>
-                </div>
-                <img
-                  src="Images/seo/dr-michael-gladstein-astoria-clinic-sign.jpg"
-                  alt="Clinic sign for Dr. Michael Gladstein dermatology office in Astoria"
-                  width="1400"
-                  height="1050"
-                />
-                <div class="post-card-body">
-                  <h3>Appointments are booked by phone only</h3>
-                  <p>Use the contact page for hours, directions, and location details. The fastest way to schedule a dermatology visit is still by phone.</p>
-                </div>
-                <div class="post-card-actions">
-                  <a class="button button-primary" href="contact.html">Contact The Office</a>
-                  <a class="button button-secondary" href="https://google.com/maps/place/Michael+Gladstein,+MD/data=!4m2!3m1!1s0x0:0xa035bc349d63019d?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noreferrer">Open Map</a>
                 </div>
               </article>
             </div>
@@ -500,6 +732,7 @@
             <p>Recognition: Castle Connolly Top Doctor (2005-2009)</p>
           </div>
         </div>
+        <p class="footer-copy">Copyright © 2026. All rights reserved <br /> Created With ❤️ by <a href="https://wa.me/919598308886" target="_blank" rel="noreferrer">Raj (+91 95983-08886)</a></p>
       </footer>
     </div>
 

@@ -1073,6 +1073,56 @@ textarea {
   color: var(--blue-ink);
 }
 
+.post-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+}
+
+.post-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.post-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(176, 199, 213, 0.55);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--blue-ink);
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease, box-shadow 0.24s ease;
+}
+
+.post-filter:hover,
+.post-filter:focus-visible,
+.post-filter.is-active {
+  background: linear-gradient(135deg, rgba(215, 239, 248, 0.96), rgba(255, 255, 255, 0.96));
+  border-color: rgba(89, 132, 162, 0.55);
+  box-shadow: 0 16px 32px rgba(22, 72, 110, 0.12);
+  transform: translateY(-1px);
+}
+
+.post-map-link {
+  white-space: nowrap;
+}
+
+.post-filter-status {
+  margin-top: 0.95rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .post-stream {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1086,6 +1136,10 @@ textarea {
   padding: 1.1rem;
 }
 
+.post-card.is-hidden {
+  display: none;
+}
+
 .post-card-head {
   display: flex;
   align-items: center;
@@ -1094,11 +1148,41 @@ textarea {
   flex-wrap: wrap;
 }
 
+.post-profile {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.post-profile strong {
+  color: var(--blue-ink);
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+.post-profile span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
 .post-date {
   color: var(--muted);
   font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.post-media-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.post-media-grid-double {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-media-grid img {
+  min-width: 0;
 }
 
 .post-card img {
@@ -1673,6 +1757,21 @@ textarea {
 
 .brand-footer {
   margin-bottom: 1rem;
+}
+
+.footer-copy {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(174, 198, 214, 0.32);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-copy a {
+  display: inline;
+  margin: 0;
+  color: var(--blue-deep);
+  font-weight: 700;
 }
 
 .quote-card {
@@ -2362,6 +2461,10 @@ textarea {
   .blog-preview-grid,
   .apple-gallery-grid,
   .gallery-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-media-grid-double {
     grid-template-columns: 1fr;
   }
 

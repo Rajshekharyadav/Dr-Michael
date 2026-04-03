@@ -20,6 +20,9 @@ const mediaViewerStage = document.getElementById("media-viewer-stage");
 const mediaViewerTitle = document.getElementById("media-viewer-title");
 const mediaViewerCloseButtons = [...document.querySelectorAll("[data-media-viewer-close]")];
 const tiltCards = [...document.querySelectorAll("[data-tilt-card]")];
+const postFilterButtons = [...document.querySelectorAll("[data-post-filter]")];
+const practicePostCards = [...document.querySelectorAll(".post-card[data-post-category]")];
+const postFilterStatus = document.getElementById("post-filter-status");
 const contactFormEndpoint =
   window.siteConfig?.contactFormEndpoint ||
   (appointmentForm ? appointmentForm.dataset.sheetEndpoint || "" : "");
@@ -304,6 +307,51 @@ if (mediaViewer) {
       closeMediaViewer();
     }
   });
+}
+
+if (postFilterButtons.length && practicePostCards.length) {
+  const filterLabels = {
+    all: "all practice posts",
+    results: "results-focused practice posts",
+    trust: "patient trust practice posts",
+    screening: "skin check practice posts",
+    clinic: "clinic news practice posts",
+  };
+
+  const setPostFilter = (filterValue) => {
+    let visibleCount = 0;
+
+    postFilterButtons.forEach((button) => {
+      const isActive = (button.dataset.postFilter || "all") === filterValue;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    practicePostCards.forEach((card) => {
+      const shouldShow = filterValue === "all" || card.dataset.postCategory === filterValue;
+      card.hidden = !shouldShow;
+      card.classList.toggle("is-hidden", !shouldShow);
+
+      if (shouldShow) {
+        visibleCount += 1;
+      }
+    });
+
+    if (postFilterStatus) {
+      postFilterStatus.textContent =
+        filterValue === "all"
+          ? `Showing all ${visibleCount} practice posts`
+          : `Showing ${visibleCount} ${filterLabels[filterValue] || "practice posts"}`;
+    }
+  };
+
+  postFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setPostFilter(button.dataset.postFilter || "all");
+    });
+  });
+
+  setPostFilter("all");
 }
 
 if (appointmentForm && formNote) {
